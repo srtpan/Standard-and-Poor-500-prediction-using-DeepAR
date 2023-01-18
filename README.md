@@ -21,3 +21,12 @@ DeepAR model integrates LSTM successfully with Autoregressive recurrent network 
 
 Other methods of time-series prediction like AR, MA, ARIMA, etc. are unable to learn simultaneously from multiple time-series. DeepAR provides better accuracy without overfitting during training. As mentioned previosuly, the classical prediction methods also rely on pre-processing methods for giving better results but the standard techniques sometimes fail to apply generally over data and that's where DeepAR has an advantage. 
 
+## Experimental Results
+
+SP500 Dataset being market data has been quite volatile over the years. The volatility makes it difficult to predict the stock index and the models used in our project also show instability when it comes to predicting stock market prices. DeepAR model tends to perform well with other, rather stable data set  like electricity or car parts sales data. When it comes to predicting stocks value, the RMSE remains unstable and fluctuates between 40-200.
+
+When trying to predict stock prices of individual companies, the model performs well for companies whose stocks tend to move together like Apple, Facebook, Amazon, etc. For a random set of companies, the model gives very high RMSE values, to the magnitude of 1000. 
+
+After normalizing the data and removing the trend, the model improves a lot and the RMSE drops to **0.269** (mean). For individual companies, adjusted close price prediction, similar improvement is noticed. However, when similar companies are clubbed together, the RMSE is much lower. When all the companies are taken together, the RMSE is around 300 with normalized data. 
+
+
